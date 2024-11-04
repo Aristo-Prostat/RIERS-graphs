@@ -2,7 +2,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 
-w = np.arange(-30, 31, 1)
+def sinc(x):
+    if x == 0:
+        return 1
+    else:
+        return (math.sin(x) / x)
+    
+tau = 90
+
+w = np.arange(-5, 5, 0.1)
 ReS = np.zeros(len(w))
 ImS = np.zeros(len(w))
 
