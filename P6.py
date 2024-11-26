@@ -97,8 +97,10 @@ u = []
 for i in range(len(t)):
     if t[i] <= 90:
         u.append((1 / 4) * t[i] - (1 / 4) * tau * (1 - math.exp(((-1) * t[i]) / tau)))
+    elif t[i] <= 180:
+        u.append((- 1 / 4) * (t[i] - 90) + (1 / 4) * tau * (1 - math.exp(((-1) * (t[i] - 90)) / tau)) + 11)
     else:
-        u.append((1 / 4) * (1 - math.exp(((-1) * t[i]) / tau)))
+        u.append(0)
 
 plt.plot(t, u)
 plt.grid()
